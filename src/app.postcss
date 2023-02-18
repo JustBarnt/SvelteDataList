@@ -1,2 +1,10 @@
 /*place global styles here */
 html, body { @apply h-full overflow-hidden; }
+
+input[data-list]:focus + div[data-list-content]{
+    @apply block;
+}
+
+div[data-list-content]:hover{
+    @apply block;
+}
