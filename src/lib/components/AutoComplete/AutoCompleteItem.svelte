@@ -89,7 +89,11 @@
     -->
     <div class="datalist-label {classesLabel}">
         <div class="datalist-label-content flex-1">
-            <slot />
+            {#if value.length}
+                <ul>
+                    {#each value as option} <li class="list-none">{option}</li> {/each}
+                </ul>
+            {/if}
         </div>
     </div>
 </label>
