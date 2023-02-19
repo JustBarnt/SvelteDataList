@@ -79,16 +79,21 @@
     on:keyup
     on:keypress
 >
-<div class="h-0 w-0 overflow-hidden">
-    <select id={name} {value} tabindex="-1" on:click>
-        {#each group as values} 
-            <option value="{values.toLowerCase()}">{values}</option>
-        {/each}
-    </select>
-</div>
-<div class="datalist-label {classesLabel}">
-    <div class="datalist-label-content flex-1">
-        <slot />
+    <!-- NOTE: Don't use `hidden` as it prevents `required` from operating -->
+    <div class="h-0 w-0 overflow-hidden">
+        <select id={name} {value} tabindex="-1" on:click>
+            {#each group as values} 
+                <option value="{values.toLowerCase()}">{values}</option>
+            {/each}
+        </select>
     </div>
-</div>
+
+    <!-- NOTE: I believe I will need to do the same selector:focus+div trick to make this items toggle between hidden and flex
+               I can get more information perhaps from Chris. 
+    -->
+    <div class="datalist-label {classesLabel}">
+        <div class="datalist-label-content flex-1">
+            <slot />
+        </div>
+    </div>
 </label>
