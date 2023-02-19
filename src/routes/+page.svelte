@@ -2,18 +2,7 @@
     import AutoComplete from "$lib/components/AutoComplete/AutoComplete.svelte";
     import AutoCompleteItem from "$lib/components/AutoComplete/AutoCompleteItem.svelte";
 	
-	let dataArray = ["Edge", "Chrome", "FireFox", "Opera", "Safari", "Brave", "Edge", "Chrome", "FireFox", "Opera", "Safari", "Brave"];
-	let emptyData = [];
-	
-	$: dataListProps = {
-		dataArray: dataArray,
-		labelName: "Browser List",
-		labelFor: "browsers",
-	};
-	
-	 $: dataListProps2 = {
-		dataArray: null,
-	};
+	let dataArray = ["Edge", "Chrome", "FireFox", "Opera", "Safari", "Brave"];
 </script>
 
 
