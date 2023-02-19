@@ -23,7 +23,6 @@
 
     // Local
     let elemInput: HTMLElement;
-    let currentSearch = '';
 
 
     function updateInput(event: Event)
