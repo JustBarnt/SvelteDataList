@@ -11,10 +11,7 @@
 		<svelte:fragment slot="input">
 			<input class="input" name="browsers" data-testid="datalist-search" type="search" />
 		</svelte:fragment>
-		<AutoCompleteItem bind:group={dataArray} value="browsers" name="browsers" > <!-- Bind array of data to groups, so select options populate? Then loop through each here to create styleable options? Add on:click event that updates the input vlaue to be the selected item? -->
-			{#each dataArray as data}
-				<li>{data}</li>
-			{/each}
-		</AutoCompleteItem>
+		<!-- Bind array of data to groups, so select options populate? Then loop through each here to create styleable options? Add on:click event that updates the input vlaue to be the selected item? -->
+		<AutoCompleteItem value={dataArray} name="browsers" /> 
 	</AutoComplete>
 </div>
