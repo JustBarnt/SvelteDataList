@@ -20,8 +20,6 @@
     export let hover: CssClasses = 'hover:variant-soft';
     /** Provides classes to set padding styles. */
     export let padding: CssClasses = 'px-4 py-2';
-    /** Provides classes to set display styles */
-    export let display: CssClasses = `hidden`;
 
     // Props (a11y)
     export let labelledby: string = ''; 
@@ -30,7 +28,6 @@
     setContext("rounded", rounded);
     setContext("hover", hover);
     setContext("padding", padding);
-    setContext("display", display);
 
     // Classes
     const cBase: string = 'cursor-pointer -outline-offset-[3px]';
