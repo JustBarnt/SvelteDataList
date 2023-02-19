@@ -4,12 +4,10 @@
     import type { CssClasses } from "@skeletonlabs/skeleton";
 
     // Props 
-    /** Set the group binding for the radio values. */
-    export let group: any;
     /** Set name for value of input. */
     export let name: string;
     /** Set the value of the input. */
-    export let value: any;
+    export let value: any[] = [];
 
     // Context
     export let rounded: CssClasses = getContext("rounded");
@@ -60,9 +58,7 @@
     }
 
     // Reactive
-    $: selected = group === value;
-    $: classesActive = selected ? hover : '';
-    $: classesBase = `${cBase} ${rounded} ${padding} ${classesActive} ${$$props.class ?? ''}`
+    $: classesBase = `${cBase} ${rounded} ${padding} ${$$props.class ?? ''}`
     $: classesLabel = `${cLabel}`;
 </script>
 
@@ -71,7 +67,6 @@
     for={name}
     class="datalist-item {classesBase}"
     role="option"
-    aria-selected={selected}
     tabindex="0"
     data-testid="datalist-item"
     on:keydown={onkeydown}
@@ -81,9 +76,9 @@
 >
     <!-- NOTE: Don't use `hidden` as it prevents `required` from operating -->
     <div class="h-0 w-0 overflow-hidden">
-        <select id={name} {value} tabindex="-1" on:click>
-            {#each group as values} 
-                <option value="{values.toLowerCase()}">{values}</option>
+        <select {name} bind:value tabindex="-1">
+            {#each value as option} 
+                <option value={option}>{option}</option>
             {/each}
         </select>
     </div>
