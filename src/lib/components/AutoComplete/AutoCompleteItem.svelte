@@ -89,6 +89,7 @@
     </div>
 
     <!-- NOTE: I believe I will need to do the same selector:focus+div trick to make this items toggle between hidden and flex
+         NOTE: Also Look at InputChip.Svelte it uses hidden select as well.
                I can get more information perhaps from Chris. 
     -->
     <div class="datalist-label {classesLabel}">
